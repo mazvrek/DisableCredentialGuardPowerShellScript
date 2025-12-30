@@ -48,8 +48,7 @@ New-ItemProperty `
 
 Write-Host "`nNew LsaCfgFlags key was created." -ForegroundColor Green
 
-$scriptPath = $MyInvocation.MyCommand.Path
-$command = "powershell -NoProfile -WindowStyle Hidden -Command `"Remove-Item -Path '$scriptPath' -Force`""
+$command = "powershell -NoProfile -WindowStyle Hidden -Command `"Remove-Item -Path '$PSCommandPath' -Force`""
 
 New-ItemProperty `
     -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce" `
